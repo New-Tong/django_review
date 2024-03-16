@@ -29,6 +29,9 @@ class PeopleInfo(models.Model):
     is_delete = models.BooleanField(default=False)
     book = models.ForeignKey(BookInfo, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         db_table = 'peopleinfo'
         verbose_name = '角色信息'
